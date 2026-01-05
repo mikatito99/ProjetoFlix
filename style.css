@@ -138,20 +138,18 @@ body {
   text-align: left;
   -webkit-backdrop-filter: blur(5px);
           backdrop-filter: blur(5px);
-}
-.secao-video-info .container-master .bloco-conteudo .caixa-explicativa p {
   color: white;
   font-size: 1.3rem;
   margin-bottom: 15px;
 }
-.secao-video-info .container-master .bloco-conteudo .caixa-explicativa p strong {
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa strong {
   color: #ffcc00;
 }
-.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .lista-check {
+.secao-video-info .container-master .bloco-conteudo .lista-check {
   list-style: none;
   padding: 0;
 }
-.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .lista-check li {
+.secao-video-info .container-master .bloco-conteudo .lista-check li {
   color: #efefef;
   font-size: 1.1rem;
   margin-bottom: 10px;
@@ -159,18 +157,18 @@ body {
   align-items: center;
   gap: 10px;
 }
-.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .lista-check li::first-letter {
+.secao-video-info .container-master .bloco-conteudo .lista-check li::first-letter {
   color: #ffcc00;
   font-weight: bold;
   font-size: 1.2rem;
 }
-.secao-video-info .container-master .bloco-conteudo li {
+.secao-video-info .container-master li {
   margin-bottom: 8px;
   color: #ffcc00;
   font-weight: bold;
   font-size: 1rem;
 }
-.secao-video-info .container-master .chamada-final {
+.secao-video-info .chamada-final {
   margin-top: 15px;
   color: #e6ff59;
   font-style: italic;
@@ -178,7 +176,8 @@ body {
   display: block;
   border-top: none;
 }
-.secao-video-info .assinatura {
+
+.assinatura {
   font-style: italic;
   font-weight: bold;
   color: #ffcc00;

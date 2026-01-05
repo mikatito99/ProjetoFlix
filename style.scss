@@ -28,25 +28,25 @@ body {
     text-align: center;
     position: relative; 
     overflow: hidden;
-    background-color: #000; // Fundo caso a imagem falhe
+    background-color: #000; 
 
     &::before {
         content: "";
         position: absolute;
         top: 0;
         left: 0;
-        right: 0; // Garante que estique para os lados
-        bottom: 0; // Garante que estique para baixo
+        right: 0; 
+        bottom: 0; 
         width: 100%;
         height: 100%;
         
-        // Tentativa de caminho absoluto para testar:
+       
         background-image: url('./img/FundoPipoca.jpg') !important;
         
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        z-index: 1; // Mudamos para 1
+        z-index: 1; 
         filter: blur(4px) brightness(0.4); 
     }
 
@@ -57,7 +57,7 @@ body {
         align-items: center;
         padding: 20px;
         position: relative; 
-        z-index: 10; // Aumentamos para garantir que fique na frente
+        z-index: 10; 
     }
 }
 
@@ -81,7 +81,7 @@ body {
     }
 
     .btn-hero {
-        background-color: #25d366; // Cor do WhatsApp
+        background-color: #25d366; 
         color: white;
         padding: 20px 40px;
         border-radius: 50px;
@@ -92,7 +92,7 @@ body {
         &:hover { transform: scale(1.05); }
     }
 
-// 4. NOVA SEÇÃO: VÍDEO QUADRADO + TEXTO BRANCO 
+
 .secao-video-info {
     background-color: #050a12;
     padding: 80px 20px;
@@ -142,21 +142,19 @@ body {
             }
 
     .caixa-explicativa {
-    background: rgba(0, 0, 0, 0.6); // Um pouco mais escuro para ler melhor sobre a pipoca
+    background: rgba(0, 0, 0, 0.6); 
     padding: 25px;
     border-radius: 15px;
     margin: 25px 0;
     border: 1px solid rgba(255, 204, 0, 0.3);
     text-align: left;
-    backdrop-filter: blur(5px); // Dá um efeito de vidro fosco chique
-
-    p {
+    backdrop-filter: blur(5px); 
         color: white;
         font-size: 1.3rem;
         margin-bottom: 15px;
 
         strong {
-            color: #ffcc00; // Amarelo destaque
+            color: #ffcc00; 
         }
     }
 
@@ -172,7 +170,7 @@ body {
             align-items: center;
             gap: 10px;
 
-            // Deixa o ✔ amarelo e em negrito
+           
             &::first-letter {
                 color: #ffcc00;
                 font-weight: bold;
@@ -206,7 +204,7 @@ body {
                 color: #ffcc00;
                 text-align: right;
             }
-        }
+        
     
 
 
@@ -225,7 +223,7 @@ body {
         font-size: 1.5rem;
         margin-bottom: 30px;
         text-transform: uppercase;
-        text-align: center; // Garante que o título fique centralizado
+        text-align: center; 
     }
 
     .logos-grid {
@@ -245,12 +243,12 @@ body {
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
-    filter: blur(3px) grayscale(100%); // Mistura desfoque com preto e branco
+    filter: blur(3px) grayscale(100%); 
     opacity: 0.6;
     transition: all 0.3s ease;
 }
 
-            // EFEITO OPCIONAL: Quando passar o mouse, a logo foca
+          
             &:hover img {
                 filter: blur(0);
                 opacity: 1;
@@ -293,7 +291,7 @@ body {
     .card-beneficio {
         flex: 1;
         min-width: 320px;
-        background: rgba(255, 255, 255, 0.08); // Brilho sutil
+        background: rgba(255, 255, 255, 0.08); 
         padding: 45px;
         border-radius: 25px;
         border: 2px solid rgba(255, 204, 0, 0.3);
