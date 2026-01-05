@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -7,6 +8,7 @@
 body {
   background-color: #001220;
   overflow-x: hidden;
+  font-family: "Arial", sans-serif;
 }
 
 .hero {
@@ -39,7 +41,6 @@ body {
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
 }
 .hero .hero-title {
-  font-family: "Arial", sans-serif;
   font-size: 3.5rem;
   font-weight: bold;
   color: white;
@@ -64,6 +65,91 @@ body {
   transform: scale(1.05);
 }
 
+.secao-video-info {
+  background-color: #050a12;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.secao-video-info .container-master {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+.secao-video-info .container-master .bloco-media {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+.secao-video-info .container-master .bloco-media .moldura-quadrada {
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 3px solid #ffcc00;
+  box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+  background: #000;
+}
+.secao-video-info .container-master .bloco-media .moldura-quadrada video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.secao-video-info .container-master .bloco-conteudo {
+  flex: 1.5;
+  color: #ffffff;
+}
+.secao-video-info .container-master .bloco-conteudo .titulo-flix {
+  color: #ffcc00;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa {
+  margin: 25px 0;
+  padding: 35px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  border-left: 5px solid #ffcc00;
+  width: 100%;
+  max-width: 600px;
+}
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa p {
+  margin-bottom: 12px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .lista-check {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .lista-check li {
+  margin-bottom: 8px;
+  color: #ffcc00;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.secao-video-info .container-master .bloco-conteudo .caixa-explicativa .chamada-final {
+  margin-top: 15px;
+  color: #e6ff59;
+  font-style: italic;
+  font-weight: bold;
+  display: block;
+  border-top: none;
+}
+.secao-video-info .container-master .bloco-conteudo .assinatura {
+  font-style: italic;
+  font-weight: bold;
+  color: #ffcc00;
+  text-align: right;
+}
+
 .platforms {
   width: 100%;
   background-color: #001220;
@@ -71,49 +157,17 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-}
-.platforms .video-placeholder {
-  width: 90%;
-  max-width: 600px;
-  margin-bottom: 40px;
-}
-.platforms .video-placeholder p {
-  color: white;
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  font-family: "Arial", sans-serif;
-}
-.platforms .video-placeholder .video-box {
-  width: 100%;
-  height: 337px;
-  background-color: #001c30;
-  border: 2px solid #002d5c;
-  border-radius: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.platforms .video-placeholder .video-box i {
-  font-size: 4rem;
-  color: #e50914;
-  margin-bottom: 15px;
 }
 .platforms h3 {
   color: white;
-  font-family: "Arial", sans-serif;
   font-size: 1.5rem;
   margin-bottom: 30px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 .platforms .logos-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  width: 100%;
   max-width: 500px;
   padding: 0 20px;
 }
@@ -122,7 +176,6 @@ body {
   background-color: #001c30;
   border-radius: 5px;
   overflow: hidden;
-  display: flex;
 }
 .platforms .logos-grid .logo-item img {
   width: 100%;
@@ -138,11 +191,224 @@ body {
   .hero .hero-title span {
     font-size: 1.8rem;
   }
-  .platforms .video-box {
-    height: 200px;
+  .secao-video-info .container-master {
+    flex-direction: column;
+    text-align: center;
+  }
+  .secao-video-info .container-master .bloco-conteudo .assinatura {
+    text-align: center;
   }
   .platforms .logos-grid {
     grid-template-columns: repeat(2, 1fr);
     max-width: 300px;
+  }
+}
+.para-quem {
+  background-color: rgba(2, 31, 61, 0.5764705882);
+  padding: 80px 20px;
+  width: 100%;
+}
+.para-quem .container-master-info {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.para-quem .card-beneficio {
+  flex: 1;
+  min-width: 320px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 45px;
+  border-radius: 25px;
+  border: 2px solid rgba(255, 204, 0, 0.3);
+  transition: all 0.3s ease;
+}
+.para-quem .card-beneficio:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.12);
+}
+.para-quem .card-beneficio .titulo-sessao {
+  color: #ffcc00;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.para-quem .card-beneficio .lista-itens {
+  list-style: none;
+  padding: 0;
+}
+.para-quem .card-beneficio .lista-itens li {
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.para-quem .card-beneficio .lista-itens li span {
+  color: #ffcc00;
+}
+.para-quem .card-beneficio .grid-tags {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.para-quem .card-beneficio .grid-tags .tag-item {
+  color: #ffffff;
+  font-size: 1rem;
+  background: rgba(0, 0, 0, 0.25);
+  padding: 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 204, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.para-quem .fechamento-flixon {
+  text-align: center;
+  margin-top: 70px;
+}
+.para-quem .fechamento-flixon h3 {
+  font-size: 3.2rem;
+  color: #ffcc00;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
+}
+.para-quem .fechamento-flixon p {
+  color: #ffffff;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 300;
+}
+
+/* AJUSTE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+  .para-quem {
+    padding: 60px 15px;
+  }
+  .para-quem .card-beneficio {
+    padding: 30px;
+  }
+  .para-quem .card-beneficio .grid-tags {
+    grid-template-columns: 1fr;
+  }
+  .para-quem .fechamento-flixon h3 {
+    font-size: 2.5rem;
+  }
+}
+.planos {
+  background-color: #001220;
+  padding: 80px 20px;
+  text-align: center;
+}
+.planos .titulo-sessao-planos {
+  color: #ffcc00;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+.planos .container-planos {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.planos .card-plano {
+  background: #ffffff;
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.planos .card-plano:hover {
+  transform: translateY(-15px);
+}
+.planos .card-plano.destaque {
+  border: 3px solid #ffcc00;
+  transform: scale(1.05);
+}
+.planos .card-plano.destaque:hover {
+  transform: scale(1.05) translateY(-10px);
+}
+.planos .card-plano .selo-popular {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffcc00;
+  color: #000;
+  padding: 5px 20px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+.planos .card-plano .header-plano {
+  margin-bottom: 30px;
+}
+.planos .card-plano .header-plano h3 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+.planos .card-plano .header-plano .preco {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #001220;
+}
+.planos .card-plano .header-plano .preco span {
+  font-size: 1.2rem;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.planos .card-plano .header-plano .periodo {
+  color: #666;
+  font-size: 0.9rem;
+}
+.planos .card-plano .beneficios-plano {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  text-align: left;
+}
+.planos .card-plano .beneficios-plano li {
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+  color: #555;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.planos .card-plano .beneficios-plano li i {
+  color: #28a745;
+}
+.planos .card-plano .btn-plano {
+  background: #001220;
+  color: #ffcc00;
+  text-decoration: none;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background 0.3s;
+  margin-top: auto;
+}
+.planos .card-plano .btn-plano:hover {
+  background: #ffcc00;
+  color: #001220;
+}
+
+@media (max-width: 768px) {
+  .card-plano.destaque {
+    transform: scale(1);
   }
 }/*# sourceMappingURL=style.css.map */

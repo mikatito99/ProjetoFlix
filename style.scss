@@ -1,11 +1,11 @@
 @use "sass:color";
 
-
+// 1. VARIÁVEIS
 $whatsapp-green: #25d366;
 $font-main: 'Arial', sans-serif;
 $bg-dark-blue: #001220; 
 
-
+// 2. RESET GERAL
 * {
     margin: 0;
     padding: 0;
@@ -15,9 +15,10 @@ $bg-dark-blue: #001220;
 body {
     background-color: $bg-dark-blue;
     overflow-x: hidden;
+    font-family: $font-main;
 }
 
-
+// 3. SEÇÃO HERO (TOPO)
 .hero {
     width: 100%;
     min-height: 100vh; 
@@ -25,8 +26,6 @@ body {
     align-items: center; 
     justify-content: center;
     text-align: center;
-    
-  
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), 
                 url('https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1920,fit=crop/jGsuWT52WqCSgKIo/maycon-1-DIpwoH8H6H3pTLfo.png');
     background-size: cover;
@@ -52,13 +51,11 @@ body {
     }
 
     .hero-title {
-        font-family: $font-main;
         font-size: 3.5rem;
         font-weight: bold;
         color: white;
         margin-bottom: 40px;
         line-height: 1.1;
-
         span { font-size: 2.8rem; display: block; }
     }
 
@@ -71,12 +68,108 @@ body {
         font-weight: bold;
         font-size: 1.2rem;
         transition: 0.3s;
-
         &:hover { transform: scale(1.05); }
     }
 }
 
+// 4. NOVA SEÇÃO: VÍDEO QUADRADO + TEXTO BRANCO (ESTÁ FORA DO HERO)
+.secao-video-info {
+    background-color: #050a12;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
 
+    .container-master {
+        max-width: 1100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 60px;
+        flex-wrap: wrap;
+
+        .bloco-media {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            .moldura-quadrada {
+                width: 100%;
+                max-width: 380px; 
+                aspect-ratio: 1/1; 
+                border-radius: 20px;
+                overflow: hidden;
+                border: 3px solid #ffcc00;
+                box-shadow: 0 0 20px rgba(255, 204, 0, 0.2);
+                background: #000;
+
+                video {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover; 
+                }
+            }
+        }
+
+        .bloco-conteudo {
+            flex: 1.5;
+            color: #ffffff;
+
+            .titulo-flix {
+                color: #ffcc00;
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+           .caixa-explicativa {
+    margin: 25px 0;
+    padding: 35px; // Aumentei o espaço interno para não ficar apertado
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    border-left: 5px solid #ffcc00;
+    width: 100%; // Garante que ela use o espaço disponível
+    max-width: 600px; // Aumenta a largura máxima da caixa
+
+    p {
+        margin-bottom: 12px;
+        font-size: 1.05rem; // Texto um pouquinho maior
+        line-height: 1.5;
+    }
+
+    .lista-check {
+        list-style: none;
+        padding: 0;
+        margin-bottom: 15px;
+
+        li {
+            margin-bottom: 8px;
+            color: #ffcc00;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    }
+
+    .chamada-final {
+        margin-top: 15px;
+        color: #e6ff59;
+        font-style: italic;
+        font-weight: bold;
+        display: block;
+        border-top: none; 
+    }
+}
+
+            .assinatura {
+                font-style: italic;
+                font-weight: bold;
+                color: #ffcc00;
+                text-align: right;
+            }
+        }
+    }
+}
+
+// 5. SEÇÃO DE PLATAFORMAS (CANAIS)
 .platforms {
     width: 100%;
     background-color: $bg-dark-blue; 
@@ -84,56 +177,18 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
-
-   
-    .video-placeholder {
-        width: 90%;
-        max-width: 600px;
-        margin-bottom: 40px;
-
-        p {
-            color: white;
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            font-family: $font-main;
-        }
-
-        .video-box {
-            width: 100%;
-            height: 337px;
-            background-color: #001c30;
-            border: 2px solid #002d5c;
-            border-radius: 15px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            color: white;
-
-            i {
-                font-size: 4rem;
-                color: #e50914; // Play vermelho
-                margin-bottom: 15px;
-            }
-        }
-    }
 
     h3 {
         color: white;
-        font-family: $font-main;
         font-size: 1.5rem;
         margin-bottom: 30px;
         text-transform: uppercase;
-        letter-spacing: 1px;
     }
 
-   
     .logos-grid {
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
         gap: 12px; 
-        width: 100%;
         max-width: 500px; 
         padding: 0 20px;
 
@@ -142,25 +197,247 @@ body {
             background-color: #001c30;
             border-radius: 5px;
             overflow: hidden;
-            display: flex;
+            img { width: 100%; height: 100%; object-fit: cover; }
+        }
+    }
+}
+
+// 6. RESPONSIVIDADE (MOBILE)
+@media (max-width: 768px) {
+    .hero .hero-title { font-size: 2.2rem; span { font-size: 1.8rem; } }
+    
+    .secao-video-info .container-master {
+        flex-direction: column;
+        text-align: center;
+        .bloco-conteudo .assinatura { text-align: center; }
+    }
+
+    .platforms .logos-grid { 
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 300px;
+    }
+}
+
+/// /* SEÇÃO PARA QUEM É 
+.para-quem {
+    background-color: #021f3d93; // Azul claro/médio para destaque
+    padding: 80px 20px;
+    width: 100%;
+    
+    .container-master-info {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .card-beneficio {
+        flex: 1;
+        min-width: 320px;
+        background: rgba(255, 255, 255, 0.08); // Brilho sutil
+        padding: 45px;
+        border-radius: 25px;
+        border: 2px solid rgba(255, 204, 0, 0.3);
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-8px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .titulo-sessao {
+            color: #ffcc00;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .lista-itens {
+            list-style: none;
+            padding: 0;
             
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover; 
+            li {
+                color: #ffffff;
+                margin-bottom: 15px;
+                font-size: 1.1rem;
+                display: flex;
+                align-items: center;
+                gap: 12px;
+
+                span {
+                    color: #ffcc00;
+                }
+            }
+        }
+
+        .grid-tags {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+
+            .tag-item {
+                color: #ffffff;
+                font-size: 1rem;
+                background: rgba(0, 0, 0, 0.25);
+                padding: 15px;
+                border-radius: 12px;
+                border: 1px solid rgba(255, 204, 0, 0.2);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+
+    .fechamento-flixon {
+        text-align: center;
+        margin-top: 70px;
+        
+        h3 { 
+            font-size: 3.2rem; 
+            color: #ffcc00; 
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+        }
+        
+        p { 
+            color: #ffffff; 
+            font-size: 1.5rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+    }
+}
+
+/* AJUSTE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 768px) {
+    .para-quem {
+        padding: 60px 15px;
+        
+        .card-beneficio {
+            padding: 30px;
+            .grid-tags {
+                grid-template-columns: 1fr; // Uma coluna no celular
+            }
+        }
+
+        .fechamento-flixon h3 {
+            font-size: 2.5rem;
+        }
+    }
+}
+///seção planos 
+ .planos {
+    background-color: #001220; // Fundo escuro para os cards brancos brilharem
+    padding: 80px 20px;
+    text-align: center;
+
+    .titulo-sessao-planos {
+        color: #ffcc00;
+        font-size: 2.5rem;
+        margin-bottom: 50px;
+    }
+
+    .container-planos {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+    }
+
+    .card-plano {
+        background: #ffffff;
+        flex: 1;
+        min-width: 300px;
+        max-width: 350px;
+        padding: 40px 30px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        display: flex;
+        flex-direction: column;
+        transition: transform 0.3s ease;
+        position: relative;
+
+        &:hover {
+            transform: translateY(-15px);
+        }
+
+        &.destaque {
+            border: 3px solid #ffcc00;
+            transform: scale(1.05);
+            &:hover { transform: scale(1.05) translateY(-10px); }
+        }
+
+        .selo-popular {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ffcc00;
+            color: #000;
+            padding: 5px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.8rem;
+        }
+
+        .header-plano {
+            margin-bottom: 30px;
+            h3 { color: #333; font-size: 1.5rem; margin-bottom: 10px; }
+            .preco { 
+                font-size: 3rem; 
+                font-weight: 800; 
+                color: #001220;
+                span { font-size: 1.2rem; vertical-align: top; margin-right: 5px; }
+            }
+            .periodo { color: #666; font-size: 0.9rem; }
+        }
+
+        .beneficios-plano {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px 0;
+            text-align: left;
+
+            li {
+                padding: 12px 0;
+                border-bottom: 1px solid #eee;
+                color: #555;
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+
+                i { color: #28a745; } // Check verde
+            }
+        }
+
+        .btn-plano {
+            background: #001220;
+            color: #ffcc00;
+            text-decoration: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: background 0.3s;
+            margin-top: auto;
+
+            &:hover {
+                background: #ffcc00;
+                color: #001220;
             }
         }
     }
 }
 
+// Mobile
 @media (max-width: 768px) {
-    .hero .hero-title { font-size: 2.2rem; span { font-size: 1.8rem; } }
-    
-    .platforms {
-        .video-box { height: 200px; }
-        .logos-grid { 
-            grid-template-columns: repeat(2, 1fr); // 2 colunas no celular
-            max-width: 300px;
-        }
+    .card-plano.destaque {
+        transform: scale(1); // Remove o aumento no celular para não bugar
     }
 }
